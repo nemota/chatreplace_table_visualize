@@ -1,21 +1,5 @@
-document.getElementById("load").onclick = function () {
-	document.getElementById("load").disabled=true;
-	var xhr=new XMLHttpRequest();
-	xhr.onreadystatechange = function () {
-		if(xhr.readyState==4){
-			if(xhr.status==200){
-				show(xhr.responseText);
-			}else{
-				alert("有効なファイルを指定してね");
-			}
-		}
-	
-	}
-	xhr.open("GET",document.getElementById("path").value.trim());
-	xhr.send(null);
-}
-function show(res){
-	var list=JSON.parse(res);
+$.getJSON("data.json",function (json) {
+	var list=json;
 	var table=document.getElementById("table");
 	console.log(list);
 	var showlist=["name","source","flags","replace"];
@@ -28,4 +12,4 @@ function show(res){
 		}
 		table.appendChild(tr);
 	}
-}
+})

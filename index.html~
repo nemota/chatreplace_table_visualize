@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		置き換え一覧ファイルパス<input type="text" id="path"><button id="load">ロードする</button><br>
 		<table border="2" id="table">
 			<tr>
 				<th>タイトル</th><th>正規表現</th><th>フラグ</th><th>置換</th>
